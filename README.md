@@ -18,8 +18,10 @@ Les résultats affichés servent à apprendre : ce ne sont ni des prévisions, n
 
 ## Ce qui a été fait à la main / avec l'aide de l'IA
 
-**Fait à la main** : tout le projet, à l'exception de Past Trader et Perfect Foresight.
-Cela comprend l'architecture (modèles, logique, données, providers, écrans), le client API Twelve Data, la base SQLite et le cache des cours, le mode hors connexion, Learn et ses leçons, Playground (formulaire, simulation, graphique, rejeu), les animations (cycle soleil/lune, révélation du graphique, compteur), le thème « verre », la navigation et la barre du bas, le profil, les sauvegardes, les médailles et la progression, le portefeuille, ainsi que les tests associés.
+**Fait à la main** : tout le projet, à l'exception de Past Trader, Perfect Foresight et de la plupart des tests.
+Cela comprend l'architecture (modèles, logique, données, providers, écrans), le client API Twelve Data, la base SQLite et le cache des cours, le mode hors connexion, Learn et ses leçons, Playground (formulaire, simulation, graphique, rejeu), les animations (cycle soleil/lune, révélation du graphique, compteur), le thème « verre », la navigation et la barre du bas, le profil, les sauvegardes, les médailles et la progression, et le portefeuille.
+
+**Tests** (`test/`) : la plupart ont été écrits avec l'aide de l'IA, surtout par manque de temps. Ils vérifient les calculs, la conversion JSON, l'API (avec un faux serveur), le cache SQLite, les providers et certains écrans.
 
 **Réalisé avec l'aide de l'IA** : **Past Trader** et **Perfect Foresight**, aussi bien le code que les fichiers de données qui les font fonctionner :
 
