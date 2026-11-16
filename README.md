@@ -56,8 +56,6 @@ screens/    écrans, rangés par rubrique
 widgets/    composants réutilisables (ciel animé, verre, graphiques…)
 ```
 
-Explication détaillée du code et questions possibles pour la soutenance : [docs/EXPLICATIONS_CODE.md](docs/EXPLICATIONS_CODE.md).
-
 ## Lancer le projet
 
 1. Créer une clé gratuite sur Twelve Data.
