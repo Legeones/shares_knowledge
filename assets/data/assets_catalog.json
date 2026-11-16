@@ -1,0 +1,16 @@
+[
+  {"symbol": "SPY", "name": "S&P 500 (ETF SPDR)", "currency": "USD", "type": "etf", "description": "Les 500 plus grandes entreprises américaines dans un seul produit."},
+  {"symbol": "QQQ", "name": "Nasdaq-100 (ETF Invesco)", "currency": "USD", "type": "etf", "description": "Les 100 plus grandes entreprises non financières du Nasdaq, surtout technologiques."},
+  {"symbol": "GLD", "name": "Or (ETF SPDR Gold)", "currency": "USD", "type": "etf", "description": "Suit le prix de l'or."},
+  {"symbol": "AAPL", "name": "Apple", "currency": "USD", "type": "stock", "description": "iPhone, Mac et services."},
+  {"symbol": "MSFT", "name": "Microsoft", "currency": "USD", "type": "stock", "description": "Windows, Office et cloud Azure."},
+  {"symbol": "NVDA", "name": "Nvidia", "currency": "USD", "type": "stock", "description": "Processeurs graphiques et puces pour l'intelligence artificielle."},
+  {"symbol": "AMZN", "name": "Amazon", "currency": "USD", "type": "stock", "description": "Commerce en ligne et cloud AWS."},
+  {"symbol": "TSLA", "name": "Tesla", "currency": "USD", "type": "stock", "description": "Voitures électriques, cours réputé très volatil."},
+  {"symbol": "KO", "name": "Coca-Cola", "currency": "USD", "type": "stock", "description": "Boissons, entreprise réputée stable."},
+  {"symbol": "MCD", "name": "McDonald's", "currency": "USD", "type": "stock", "description": "Restauration rapide."},
+  {"symbol": "NKE", "name": "Nike", "currency": "USD", "type": "stock", "description": "Articles de sport."},
+  {"symbol": "DIS", "name": "Disney", "currency": "USD", "type": "stock", "description": "Divertissement, parcs et streaming."},
+  {"symbol": "BTC/USD", "name": "Bitcoin", "currency": "USD", "type": "crypto", "description": "Première cryptomonnaie, cotée tous les jours, week-end compris."},
+  {"symbol": "ETH/USD", "name": "Ethereum", "currency": "USD", "type": "crypto", "description": "Deuxième cryptomonnaie par taille."}
+]
