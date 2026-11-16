@@ -2,11 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../core/formatters.dart';
 
-/// Animation 3 — le montant défile jusqu'à sa nouvelle valeur.
-///
-/// `TweenAnimationBuilder` est une animation **implicite** : on lui donne
-/// seulement la valeur d'arrivée. Quand elle change, Flutter anime tout seul
-/// depuis l'ancienne valeur. Pas de contrôleur à créer ni à libérer.
+/// Montant qui défile jusqu'à sa nouvelle valeur.
 class AnimatedMoney extends StatelessWidget {
   final double value;
   final String currency;

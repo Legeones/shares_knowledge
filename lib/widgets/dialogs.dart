@@ -28,9 +28,7 @@ Future<String?> askText(
   );
 }
 
-/// La boîte de saisie est un StatefulWidget pour posséder son
-/// TextEditingController et le libérer dans dispose(), c'est-à-dire
-/// seulement quand la boîte a fini de disparaître (animation comprise).
+/// Stateful pour libérer le contrôleur seulement après la fermeture.
 class _TextDialog extends StatefulWidget {
   final String title;
   final String label;

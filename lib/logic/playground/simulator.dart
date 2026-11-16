@@ -77,7 +77,7 @@ SimulationResult simulateLumpSum(SimulationParams params, PriceSeries series) {
 /// mois, au premier jour de bourse à partir du même jour du mois que le
 /// début (le 31 devient le 30 ou le 28 si le mois est plus court).
 ///
-/// La baisse maximale est celle du **cours** : la valeur du portefeuille
+/// La baisse maximale est celle du cours : la valeur du portefeuille
 /// monte aussi à chaque versement, ce qui masquerait les chutes.
 SimulationResult simulateMonthly(SimulationParams params, PriceSeries series) {
   _checkParams(params);

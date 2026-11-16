@@ -2,12 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-/// Animation 1 — le cycle soleil / lune.
-///
-/// Un bandeau de ciel en haut de l'écran. À chaque avancée du temps, le
-/// soleil se couche, la lune traverse le ciel, puis le soleil revient. Leur
-/// lumière déborde de la carte et éclaire doucement le fond de la page.
-/// Le texte (date, cours…) est posé par-dessus et reste toujours lisible.
+/// Bandeau de ciel : à chaque avancée du temps, le soleil se couche, la lune
+/// passe, puis le soleil revient. Le halo déborde sur la page.
 class SkyHeader extends StatelessWidget {
   /// Avancement du cycle : 0 → 1 = un tour complet (jour → nuit → jour).
   final Animation<double> cycle;

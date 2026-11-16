@@ -253,8 +253,6 @@ class _GrowthChart extends StatelessWidget {
               ),
             ),
           ),
-          // Animation implicite de fl_chart : les courbes glissent quand on
-          // bouge un curseur.
           duration: const Duration(milliseconds: 250),
         ),
       ),

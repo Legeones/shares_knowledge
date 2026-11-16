@@ -20,7 +20,7 @@ double performance({required double invested, required double finalValue}) {
 /// Rendement composé : capital × (1 + taux)^années.
 ///
 /// Chaque année, les gains de l'année précédente rapportent eux aussi.
-/// Le taux est une **hypothèse constante** (ex. 0.05 = 5 % par an), pas une
+/// Le taux est une hypothèse constante (ex. 0.05 = 5 % par an), pas une
 /// donnée historique : l'interface doit l'indiquer.
 double compoundValue({
   required double capital,

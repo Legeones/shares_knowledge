@@ -19,8 +19,7 @@ class Coverage {
       !start.isBefore(from) && !end.isAfter(to);
 }
 
-/// DAO (Data Access Object) : toutes les requêtes SQL du cache des cours,
-/// et seulement elles. Le reste de l'application ne voit jamais de SQL.
+/// Requêtes SQL du cache des cours.
 class PriceCacheDao {
   final Database _db;
   PriceCacheDao(this._db);
@@ -31,7 +30,6 @@ class PriceCacheDao {
     DateTime start,
     DateTime end,
   ) async {
-    // Risque d'injection SQL supprimer via les ?.
     final rows = await _db.query(
       'price_point',
       where: 'symbol = ? AND date >= ? AND date <= ?',
@@ -63,16 +61,13 @@ class PriceCacheDao {
   }
 
   /// Enregistre de nouveaux cours et la nouvelle période couverte.
-  ///
-  /// Le tout dans une **transaction**. Si erreur, rien n'est sauvegardé.
+  /// Transaction : tout ou rien.
   Future<void> save(
     String symbol,
     List<PricePoint> points,
     Coverage coverage,
   ) async {
     await _db.transaction((txn) async {
-      // Un « batch » envoie toutes les insertions d'un coup : beaucoup plus
-      // rapide que des milliers d'appels séparés.
       final batch = txn.batch();
       for (final p in points) {
         batch.insert('price_point', {

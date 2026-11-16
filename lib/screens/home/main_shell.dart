@@ -22,10 +22,7 @@ import '../playground/playground_screen.dart';
 import '../profile/profile_screen.dart';
 import '../progress/progress_screen.dart';
 
-/// « Coquille » de l'application : barre du haut, barre de navigation du bas,
-/// et au milieu l'écran de la rubrique sélectionnée.
-///
-/// C'est un StatefulWidget car il doit se souvenir de l'onglet sélectionné.
+/// Barre du haut, barre du bas et écran de l'onglet sélectionné.
 class MainShell extends StatefulWidget {
   const MainShell({super.key});
 
@@ -233,8 +230,7 @@ class _MainShellState extends State<MainShell> with RouteAware {
           },
           child: Stack(
             children: [
-              // IndexedStack garde tous les écrans en mémoire et n'affiche que
-              // celui demandé : changer d'onglet ne fait pas perdre la saisie.
+              // Garde la saisie quand on change d'onglet.
               IndexedStack(
                 index: _selectedIndex,
                 children: [

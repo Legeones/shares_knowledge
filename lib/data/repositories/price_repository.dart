@@ -24,13 +24,8 @@ class PriceData {
   });
 }
 
-/// Le repository décide **d'où viennent les cours** : cache local ou API.
-///
-/// Les écrans ne parlent qu'à lui ; ils ne savent pas si une donnée vient
-/// d'internet ou du téléphone.
-///
-/// Idée clé : un cours passé ne change jamais. Une période déjà téléchargée
-/// n'est donc jamais redemandée ; seuls les jours manquants le sont.
+/// Cours depuis le cache ou l'API. Un cours passé ne change pas : seuls
+/// les jours manquants sont téléchargés.
 class PriceRepository {
   final TwelveDataApi _api;
   final PriceCacheDao _dao;

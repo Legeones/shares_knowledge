@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-/// Catégorie d'un actif. Une `enum` limite les valeurs possibles :
+/// Catégorie d'un actif. Un enum limite les valeurs possibles :
 /// impossible d'écrire par erreur « actoin ».
 enum AssetType { stock, etf, crypto }
 

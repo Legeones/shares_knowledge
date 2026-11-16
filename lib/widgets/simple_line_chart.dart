@@ -8,9 +8,8 @@ import '../core/theme.dart';
 
 /// Courbe simple (cours d'un actif, valeur du portefeuille).
 ///
-/// Les bornes sont calculées **uniquement sur les points fournis** : dans
-/// Past Trader, on ne passe que le passé, donc l'échelle ne trahit jamais
-/// les prix futurs.
+/// Les bornes ne dépendent que des points fournis (pas de prix futur dans
+/// Past Trader).
 class SimpleLineChart extends StatelessWidget {
   final List<({DateTime date, double value})> points;
   final Color color;

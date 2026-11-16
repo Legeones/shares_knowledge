@@ -5,17 +5,11 @@ import 'package:sqflite/sqflite.dart';
 class AppDatabase {
   static const _fileName = 'shares_knowledge.db';
 
-  /// À augmenter à chaque changement de structure (nouvelle table…).
-  /// sqflite appelle alors `onUpgrade` pour mettre à jour une base existante.
-  ///
-  /// Historique : v1 = cache des cours ; v2 = + simulations sauvegardées ;
+  /// v1 = cache des cours ; v2 = + simulations sauvegardées ;
   /// v3 = + parties Past Trader ; v4 = + portefeuille en temps réel.
   static const _version = 4;
 
-  /// Ouvre (ou crée) la base.
-  ///
-  /// [path] et [factory] servent uniquement aux tests, qui utilisent une
-  /// base en mémoire sur l'ordinateur au lieu d'un fichier sur le téléphone.
+  /// [path] et [factory] : pour les tests (base en mémoire).
   static Future<Database> open({String? path, DatabaseFactory? factory}) async {
     final dbFactory = factory ?? databaseFactory;
     final dbPath = path ?? join(await getDatabasesPath(), _fileName);
@@ -30,7 +24,6 @@ class AppDatabase {
     );
   }
 
-  /// Appelé une seule fois, à la toute première ouverture : crée tout.
   static Future<void> _onCreate(Database db, int version) async {
     await _createPriceTables(db);
     await _createSavedSimulationTable(db);
@@ -38,8 +31,7 @@ class AppDatabase {
     await _createWalletTables(db);
   }
 
-  /// Appelé quand une application déjà installée (base en v1) est mise à
-  /// jour : on ajoute seulement ce qui manque, sans effacer le cache existant.
+  /// Ajoute les tables manquantes sans effacer le cache.
   static Future<void> _onUpgrade(
     Database db,
     int oldVersion,
@@ -51,10 +43,7 @@ class AppDatabase {
   }
 
   static Future<void> _createPriceTables(Database db) async {
-    // Un cours par ligne. La clé primaire (symbol, date) empêche les doublons :
-    // il ne peut y avoir qu'un cours d'AAPL le 2024-01-05.
-    // Les dates sont en texte "AAAA-MM-JJ" : lisible, et l'ordre alphabétique
-    // est aussi l'ordre chronologique.
+    // Dates en "AAAA-MM-JJ" : l'ordre du texte est l'ordre chronologique.
     await db.execute('''
       CREATE TABLE price_point (
         symbol TEXT NOT NULL,

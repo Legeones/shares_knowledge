@@ -6,10 +6,7 @@ import 'package:http/http.dart' as http;
 import '../../models/price_point.dart';
 import 'api_exceptions.dart';
 
-/// Accès à l'API REST Twelve Data (https://twelvedata.com/docs).
-///
-/// Cette classe fait **uniquement** : construire l'URL, appeler, convertir le
-/// JSON en objets Dart, traduire les erreurs.
+/// Client de l'API Twelve Data (https://twelvedata.com/docs).
 class TwelveDataApi {
   static const _host = 'api.twelvedata.com';
   static const _timeout = Duration(seconds: 15);
@@ -32,10 +29,6 @@ class TwelveDataApi {
        _now = now ?? DateTime.now;
 
   /// Cours de clôture quotidiens de [symbol] entre [start] et [end] inclus.
-  ///
-  /// Exemple d'URL produite :
-  /// https://api.twelvedata.com/time_series?symbol=AAPL&interval=1day
-  ///   &start_date=2024-01-01&end_date=2024-12-31&outputsize=5000&apikey=...
   Future<List<PricePoint>> fetchDailySeries(
     String symbol, {
     required DateTime start,
@@ -75,9 +68,7 @@ class TwelveDataApi {
     // On attend un objet JSON { ... }, qui devient une Map en Dart.
     if (json is! Map<String, dynamic>) throw const BadResponseException();
 
-    // Particularité de Twelve Data : une erreur peut arriver avec le code
-    // HTTP 200. Le vrai code est alors dans le corps :
-    // {"status":"error","code":429,...}
+    // Twelve Data peut renvoyer une erreur avec un code HTTP 200.
     if (json['status'] == 'error') {
       throw switch (json['code']) {
         429 => const QuotaExceededException(),

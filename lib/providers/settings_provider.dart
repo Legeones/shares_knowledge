@@ -6,11 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../logic/taxes.dart';
 import '../models/simulation.dart';
 
-/// Préférences et petits compteurs, stockés avec shared_preferences.
-///
-/// shared_preferences = un simple dictionnaire clé → valeur enregistré sur le
-/// téléphone. Parfait pour quelques réglages ; les données nombreuses ou
-/// structurées (cours, sauvegardes) restent dans SQLite.
+/// Préférences et petits compteurs (shared_preferences).
 class SettingsProvider extends ChangeNotifier {
   final SharedPreferences _prefs;
   SettingsProvider(this._prefs);

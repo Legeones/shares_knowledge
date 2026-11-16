@@ -284,8 +284,6 @@ class LessonChart extends StatelessWidget {
               ),
             ),
           ),
-          // Animation implicite : les courbes glissent quand on bouge un
-          // curseur.
           duration: const Duration(milliseconds: 250),
         ),
       ),

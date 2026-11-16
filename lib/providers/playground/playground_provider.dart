@@ -5,8 +5,7 @@ import '../../data/repositories/price_repository.dart';
 import '../../logic/playground/simulator.dart';
 import '../../models/simulation.dart';
 
-/// Les états possibles d'une simulation. `sealed` : l'écran doit les traiter
-/// tous dans son `switch` (obligation : chargement / données / erreur).
+/// États d'une simulation.
 sealed class PlaygroundState {
   const PlaygroundState();
 }
@@ -40,7 +39,7 @@ class PlaygroundFailure extends PlaygroundState {
 class PlaygroundProvider extends ChangeNotifier {
   final PriceRepository _repository;
 
-  /// Prévenu après chaque **nouvelle** simulation réussie (compteur du
+  /// Prévenu après chaque nouvelle simulation réussie (compteur du
   /// profil, bouton « Reprendre »). Le provider ne sait pas ce qu'on en fait.
   final void Function(SimulationParams params)? onNewRunSucceeded;
 

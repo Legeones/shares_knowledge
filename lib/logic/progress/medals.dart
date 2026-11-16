@@ -1,8 +1,4 @@
-/// Médailles : des règles en pur Dart, calculées à partir de la progression.
-///
-/// Rien n'est enregistré pour les médailles elles-mêmes : elles se déduisent
-/// de ce que l'utilisateur a fait (leçons, simulations, parties). Une remise à
-/// zéro de la progression les retire donc automatiquement.
+/// Médailles, déduites de la progression (rien n'est enregistré).
 library;
 
 /// Ce que l'utilisateur a accompli, rassemblé depuis les différents providers.

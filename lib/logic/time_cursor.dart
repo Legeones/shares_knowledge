@@ -65,14 +65,7 @@ DateTime addStep(DateTime date, TimeStep step) {
   }
 }
 
-/// Durée totale de la lecture automatique d'une période de [periodDays] jours.
-///
-/// La vitesse s'adapte à la période : 10 s de base + 1 s par tranche de
-/// 60 jours, entre 15 s et 60 s. Exemples :
-/// - 1 semaine → 15 s  (0,5 jour par seconde)
-/// - 1 an      → 16 s  (23 jours par seconde)
-/// - 5 ans     → 40 s  (46 jours par seconde)
-/// - 20 ans    → 60 s  (122 jours par seconde)
+/// Durée de la lecture automatique : 10 s + 1 s par 60 jours, entre 15 et 60 s.
 Duration autoPlayDuration(int periodDays) {
   final seconds = (10 + periodDays / 60).clamp(15, 60);
   return Duration(milliseconds: (seconds * 1000).round());

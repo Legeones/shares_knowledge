@@ -24,9 +24,8 @@ import 'providers/past_trader/trader_save_provider.dart';
 import 'data/wallet/wallet_dao.dart';
 import 'providers/wallet/wallet_provider.dart';
 
-/// Point d'entrée : Flutter appelle `main()` au lancement.
 Future<void> main() async {
-  // Obligatoire avant d'utiliser un plugin (ici SQLite) avant runApp.
+  // Nécessaire pour SQLite avant runApp.
   WidgetsFlutterBinding.ensureInitialized();
 
   final db = await AppDatabase.open();
@@ -46,8 +45,6 @@ Future<void> main() async {
   );
 
   runApp(
-    // Les providers rendent ces objets accessibles à tous les écrans
-    // avec context.read<...>() ou context.watch<...>().
     MultiProvider(
       providers: [
         Provider.value(value: priceRepository),

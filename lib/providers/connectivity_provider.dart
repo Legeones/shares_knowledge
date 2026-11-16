@@ -3,13 +3,8 @@ import 'dart:async';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/foundation.dart';
 
-/// Indique si le téléphone a un réseau, et prévient les écrans quand ça change.
-///
-/// C'est un ChangeNotifier : quand `isOnline` change, il appelle
-/// `notifyListeners()` et tous les widgets qui l'observent se redessinent.
-///
-/// Limite : être connecté à un Wi-Fi ne garantit pas l'accès à internet.
-/// C'est pourquoi le repository gère aussi l'échec réel de la requête.
+/// Indique si le téléphone a un réseau (pas forcément internet : le
+/// repository gère aussi l'échec des requêtes).
 class ConnectivityProvider extends ChangeNotifier {
   bool _isOnline = true;
   late final StreamSubscription<bool> _subscription;

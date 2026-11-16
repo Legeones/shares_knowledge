@@ -2,7 +2,7 @@
 
 ## 1. Rôle de ce document
 
-Ce document décrit ce que l’utilisateur doit pouvoir faire, voir et comprendre dans SharesKnowledge. Il sert de base à la conception de l’application par Claude. Les choix de développement, d’architecture, de bibliothèques et de stockage lui sont laissés.
+Ce document décrit ce que l’utilisateur doit pouvoir faire, voir et comprendre dans SharesKnowledge. Il sert de base à la conception de l’application. Les choix de développement, d’architecture, de bibliothèques et de stockage sont faits au moment du développement.
 
 Le plan rassemble la proposition de projet et les idées discutées ensuite. Il distingue le premier périmètre à terminer des enrichissements possibles. Toutes les rubriques participent à la vision finale, mais leur profondeur dépendra du temps disponible pour un développement seul.
 
@@ -336,7 +336,7 @@ Un profil minimal peut exister dès le début pour retrouver les sauvegardes. Le
 - Les compteurs de progression distinguent découvertes, simulations et répétitions.
 - Les animations aident à comprendre l’évolution du temps et des valeurs.
 
-## 13. Obligations du sujet à transmettre à Claude
+## 13. Obligations du sujet
 
 Cette liste conserve les exigences scolaires, sans prescrire leur mise en œuvre :
 
@@ -356,7 +356,7 @@ Cette liste conserve les exigences scolaires, sans prescrire leur mise en œuvre
 - Un rapport expliquant les choix, les réalisations, les limites et les validations.
 - Une démonstration fonctionnelle et la capacité à expliquer le fonctionnement de l’application.
 
-La proposition d’une page doit être validée avant le développement. Le choix définitif des sources de données et de leurs possibilités reste à vérifier par Claude. Twelve Data et, si nécessaire, CoinGecko sont les pistes mentionnées dans la proposition, sans engagement sur leurs offres ni leurs limites.
+La proposition d’une page doit être validée avant le développement. Le choix définitif des sources de données et de leurs possibilités reste à vérifier pendant le développement. Twelve Data et, si nécessaire, CoinGecko sont les pistes mentionnées dans la proposition, sans engagement sur leurs offres ni leurs limites.
 
 ## 14. Évolutions à garder hors du premier périmètre
 

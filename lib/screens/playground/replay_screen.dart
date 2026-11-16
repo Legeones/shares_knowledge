@@ -22,17 +22,14 @@ class ReplayScreen extends StatefulWidget {
   State<ReplayScreen> createState() => _ReplayScreenState();
 }
 
-/// `TickerProviderStateMixin` fournit le « vsync » des AnimationController :
-/// un signal à chaque image de l'écran (≈ 60 par seconde), coupé
-/// automatiquement quand l'écran n'est pas visible (économie de batterie).
 class _ReplayScreenState extends State<ReplayScreen>
     with TickerProviderStateMixin {
   late final Replay _replay = Replay(widget.result);
 
-  /// Animation 1 (programmée) : un tour du cycle soleil / lune.
+  /// Un tour du cycle soleil / lune.
   late final AnimationController _sky = AnimationController(vsync: this);
 
-  /// Animation 2 (programmée) : révélation progressive des points du graphique.
+  /// Révélation progressive des points du graphique.
   late final AnimationController _reveal = AnimationController(
     vsync: this,
     value: 1, // au départ, rien à animer
@@ -49,10 +46,7 @@ class _ReplayScreenState extends State<ReplayScreen>
       .difference(widget.result.actualStart)
       .inDays;
 
-  /// Lecture automatique fluide : un troisième AnimationController dont la
-  /// valeur (0 → 1) est la **position dans la période**. À chaque image, on
-  /// en déduit la date à afficher : les jours défilent en continu, sans à-coups.
-  /// Sa durée = temps pour parcourir toute la période (voir autoPlayDuration).
+  /// Lecture automatique : valeur 0 → 1 = position dans la période.
   late final AnimationController _playback =
       AnimationController(vsync: this, duration: autoPlayDuration(_totalDays))
         ..addListener(_onPlaybackFrame)
@@ -101,8 +95,6 @@ class _ReplayScreenState extends State<ReplayScreen>
 
   @override
   void dispose() {
-    // Un contrôleur non libéré continuerait de tourner après la fermeture
-    // de l'écran : fuite de mémoire.
     _playback.dispose();
     _sky.dispose();
     _reveal.dispose();
@@ -196,7 +188,6 @@ class _ReplayScreenState extends State<ReplayScreen>
                   children: [
                     // Expanded : le libellé passe à la ligne si la place manque.
                     const Expanded(child: Text('Valeur de l’investissement')),
-                    // Animation 3 (implicite) : le montant défile.
                     AnimatedMoney(
                       value: _replay.currentValue,
                       currency: currency,
