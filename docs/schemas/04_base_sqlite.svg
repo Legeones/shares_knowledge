@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560" font-family="Segoe UI, Arial, sans-serif">
+  <style>
+    .h{font-size:15px;font-weight:700;fill:#fff}
+    .f{font-size:13px;fill:#0B1424}
+    .k{font-size:13px;fill:#0B1424;font-weight:700}
+    .g{font-size:14px;font-weight:700}
+  </style>
+  <rect width="1000" height="560" fill="#fff"/>
+  <text x="40" y="34" font-size="20" font-weight="700" fill="#0B1424">Base SQLite (version 4)</text>
+
+  <!-- group API -->
+  <rect x="30" y="56" width="300" height="480" rx="16" fill="#F2F7FF" stroke="#C9D6F2"/>
+  <text class="g" x="50" y="84" fill="#1F5EFF">DONNÉES ISSUES DE L'API (cache)</text>
+
+  <rect x="50" y="104" width="260" height="128" rx="10" fill="#fff" stroke="#1F5EFF"/>
+  <path d="M50,114 a10,10 0 0 1 10,-10 h240 a10,10 0 0 1 10,10 v22 h-260 z" fill="#1F5EFF"/>
+  <text class="h" x="64" y="127">price_point</text>
+  <text class="k" x="64" y="160">🔑 symbol, date</text>
+  <text class="f" x="64" y="182">close</text>
+  <text class="f" x="64" y="214" fill="#4A5468" font-size="12px">un cours de clôture par jour et par actif</text>
+
+  <rect x="50" y="300" width="260" height="150" rx="10" fill="#fff" stroke="#1F5EFF"/>
+  <path d="M50,310 a10,10 0 0 1 10,-10 h240 a10,10 0 0 1 10,10 v22 h-260 z" fill="#1F5EFF"/>
+  <text class="h" x="64" y="323">price_coverage</text>
+  <text class="k" x="64" y="356">🔑 symbol</text>
+  <text class="f" x="64" y="378">from_date, to_date</text>
+  <text class="f" x="64" y="400">updated_at</text>
+  <text class="f" x="64" y="432" fill="#4A5468" font-size="12px">période déjà téléchargée par actif</text>
+
+  <line x1="180" y1="232" x2="180" y2="300" stroke="#1F5EFF" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="190" y="270" font-size="12" fill="#1F5EFF">même symbol</text>
+
+  <!-- group user -->
+  <rect x="360" y="56" width="610" height="480" rx="16" fill="#F1FBF8" stroke="#BFE7DF"/>
+  <text class="g" x="380" y="84" fill="#0A8F84">DONNÉES DE L'UTILISATEUR</text>
+
+  <rect x="380" y="104" width="275" height="176" rx="10" fill="#fff" stroke="#0A8F84"/>
+  <path d="M380,114 a10,10 0 0 1 10,-10 h255 a10,10 0 0 1 10,10 v22 h-275 z" fill="#0A8F84"/>
+  <text class="h" x="394" y="127">saved_simulation</text>
+  <text class="k" x="394" y="160">🔑 id</text>
+  <text class="f" x="394" y="182">name, params_json</text>
+  <text class="f" x="394" y="204">actual_start, actual_end</text>
+  <text class="f" x="394" y="226">final_value, gain, performance</text>
+  <text class="f" x="394" y="248">max_drawdown, created_at</text>
+
+  <rect x="675" y="104" width="275" height="176" rx="10" fill="#fff" stroke="#0A8F84"/>
+  <path d="M675,114 a10,10 0 0 1 10,-10 h255 a10,10 0 0 1 10,10 v22 h-275 z" fill="#0A8F84"/>
+  <text class="h" x="689" y="127">trader_attempt  (Past Trader)</text>
+  <text class="k" x="689" y="160">🔑 id</text>
+  <text class="f" x="689" y="182">game_id, played_at, end_date</text>
+  <text class="f" x="689" y="204">final_value, performance</text>
+  <text class="f" x="689" y="226">spy_performance, max_drawdown</text>
+  <text class="f" x="689" y="248">trades_count, stopped_early</text>
+
+  <!-- wallet -->
+  <text class="g" x="380" y="314" fill="#0A8F84" font-size="13">Mon portefeuille</text>
+  <rect x="380" y="326" width="180" height="96" rx="10" fill="#fff" stroke="#0A8F84"/>
+  <path d="M380,336 a10,10 0 0 1 10,-10 h160 a10,10 0 0 1 10,10 v22 h-180 z" fill="#0A8F84"/>
+  <text class="h" x="394" y="349">wallet</text>
+  <text class="k" x="394" y="380">🔑 id = 1</text>
+  <text class="f" x="394" y="402">created_at, processed_until</text>
+
+  <rect x="590" y="326" width="360" height="62" rx="10" fill="#fff" stroke="#0A8F84"/>
+  <path d="M590,336 a10,10 0 0 1 10,-10 h340 a10,10 0 0 1 10,10 v22 h-360 z" fill="#0A8F84"/>
+  <text class="h" x="604" y="349">wallet_transaction</text>
+  <text class="f" x="604" y="377">id, date, type, source, symbol, units, price, amount</text>
+
+  <rect x="590" y="398" width="360" height="62" rx="10" fill="#fff" stroke="#0A8F84"/>
+  <path d="M590,408 a10,10 0 0 1 10,-10 h340 a10,10 0 0 1 10,10 v22 h-360 z" fill="#0A8F84"/>
+  <text class="h" x="604" y="421">wallet_dca_plan</text>
+  <text class="f" x="604" y="449">id, symbol, name, amount, day_of_month, last_target</text>
+
+  <rect x="590" y="470" width="360" height="56" rx="10" fill="#fff" stroke="#0A8F84"/>
+  <path d="M590,480 a10,10 0 0 1 10,-10 h340 a10,10 0 0 1 10,10 v22 h-360 z" fill="#0A8F84"/>
+  <text class="h" x="604" y="493">wallet_rule</text>
+  <text class="f" x="604" y="519">🔑 symbol, stop_loss, take_profit</text>
+
+  <path d="M560,374 L575,374 M575,357 L575,499 M575,357 L588,357 M575,429 L588,429 M575,499 L588,499" stroke="#0A8F84" stroke-width="2" fill="none"/>
+  <text x="380" y="448" font-size="12" fill="#4A5468">L'état du portefeuille est</text>
+  <text x="380" y="465" font-size="12" fill="#4A5468">recalculé en rejouant le</text>
+  <text x="380" y="482" font-size="12" fill="#4A5468">journal des opérations.</text>
+</svg>

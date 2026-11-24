@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#003891"/></marker>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0A8F84"/></marker>
+  </defs>
+  <rect width="1000" height="560" fill="#ffffff"/>
+  <text x="40" y="34" font-size="20" font-weight="700" fill="#0B1424">Architecture en couches de lib/</text>
+
+  <!-- Interface -->
+  <rect x="40" y="60" width="680" height="76" rx="14" fill="#E4ECFF" stroke="#1F5EFF" stroke-width="1.5"/>
+  <text x="60" y="92" font-size="18" font-weight="700" fill="#003891">Interface  ·  screens/, widgets/</text>
+  <text x="60" y="118" font-size="14" fill="#4A5468">Affiche l'état et transmet les actions de l'utilisateur. Aucun calcul, aucune requête.</text>
+
+  <!-- État -->
+  <rect x="40" y="196" width="680" height="76" rx="14" fill="#E4ECFF" stroke="#1F5EFF" stroke-width="1.5"/>
+  <text x="60" y="228" font-size="18" font-weight="700" fill="#003891">État  ·  providers/  (ChangeNotifier)</text>
+  <text x="60" y="254" font-size="14" fill="#4A5468">Garde l'état partagé entre écrans et appelle notifyListeners() quand il change.</text>
+
+  <!-- arrows interface <-> état -->
+  <line x1="300" y1="138" x2="300" y2="192" stroke="#003891" stroke-width="2" marker-end="url(#a)"/>
+  <text x="310" y="170" font-size="13" fill="#003891">context.watch / read</text>
+  <line x1="480" y1="194" x2="480" y2="140" stroke="#003891" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#a)"/>
+  <text x="490" y="170" font-size="13" fill="#003891">notifyListeners() : reconstruction</text>
+
+  <!-- Logique / Données -->
+  <rect x="40" y="332" width="320" height="86" rx="14" fill="#F5F7FB" stroke="#9AA6BE" stroke-width="1.5"/>
+  <text x="60" y="364" font-size="18" font-weight="700" fill="#0B1424">Logique  ·  logic/</text>
+  <text x="60" y="388" font-size="14" fill="#4A5468">Calculs en pur Dart, sans Flutter :</text>
+  <text x="60" y="406" font-size="14" fill="#4A5468">simulation, baisse max., volatilité…</text>
+
+  <rect x="400" y="332" width="320" height="86" rx="14" fill="#F5F7FB" stroke="#9AA6BE" stroke-width="1.5"/>
+  <text x="420" y="364" font-size="18" font-weight="700" fill="#0B1424">Données  ·  data/</text>
+  <text x="420" y="388" font-size="14" fill="#4A5468">Repository (cache ou API ?), client</text>
+  <text x="420" y="406" font-size="14" fill="#4A5468">REST, DAO SQLite, fichiers JSON</text>
+
+  <line x1="200" y1="274" x2="200" y2="328" stroke="#003891" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="560" y1="274" x2="560" y2="328" stroke="#003891" stroke-width="2" marker-end="url(#a)"/>
+  <text x="210" y="306" font-size="13" fill="#003891">calcule</text>
+  <text x="570" y="306" font-size="13" fill="#003891">lit / enregistre</text>
+
+  <!-- models / core -->
+  <rect x="40" y="460" width="680" height="64" rx="14" fill="#FFFFFF" stroke="#9AA6BE" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="60" y="488" font-size="16" font-weight="700" fill="#0B1424">models/  <tspan font-weight="400" fill="#4A5468">classes de données (fromJson / toJson)</tspan></text>
+  <text x="60" y="510" font-size="16" font-weight="700" fill="#0B1424">core/  <tspan font-weight="400" fill="#4A5468">thème, formats, navigation, configuration (utilisés par toutes les couches)</tspan></text>
+
+  <!-- external -->
+  <text x="790" y="184" font-size="14" font-weight="700" fill="#0A8F84">HORS DU CODE</text>
+  <rect x="790" y="196" width="180" height="58" rx="12" fill="#E0FAF7" stroke="#0A8F84" stroke-width="1.5"/>
+  <text x="880" y="222" font-size="15" font-weight="700" fill="#0B1424" text-anchor="middle">SharedPreferences</text>
+  <text x="880" y="242" font-size="12" fill="#4A5468" text-anchor="middle">réglages, progression</text>
+
+  <rect x="790" y="290" width="180" height="58" rx="12" fill="#E0FAF7" stroke="#0A8F84" stroke-width="1.5"/>
+  <text x="880" y="316" font-size="15" font-weight="700" fill="#0B1424" text-anchor="middle">API Twelve Data</text>
+  <text x="880" y="336" font-size="12" fill="#4A5468" text-anchor="middle">HTTPS, JSON</text>
+
+  <rect x="790" y="366" width="180" height="58" rx="12" fill="#E0FAF7" stroke="#0A8F84" stroke-width="1.5"/>
+  <text x="880" y="392" font-size="15" font-weight="700" fill="#0B1424" text-anchor="middle">SQLite</text>
+  <text x="880" y="412" font-size="12" fill="#4A5468" text-anchor="middle">cache + données utilisateur</text>
+
+  <rect x="790" y="442" width="180" height="58" rx="12" fill="#E0FAF7" stroke="#0A8F84" stroke-width="1.5"/>
+  <text x="880" y="468" font-size="15" font-weight="700" fill="#0B1424" text-anchor="middle">assets/ (JSON)</text>
+  <text x="880" y="488" font-size="12" fill="#4A5468" text-anchor="middle">catalogue, scénarios</text>
+
+  <line x1="722" y1="225" x2="786" y2="225" stroke="#0A8F84" stroke-width="2" marker-end="url(#g)"/>
+  <path d="M722,360 L756,360 L756,319 L786,319" fill="none" stroke="#0A8F84" stroke-width="2" marker-end="url(#g)"/>
+  <line x1="722" y1="395" x2="786" y2="395" stroke="#0A8F84" stroke-width="2" marker-end="url(#g)"/>
+  <path d="M722,408 L756,408 L756,471 L786,471" fill="none" stroke="#0A8F84" stroke-width="2" marker-end="url(#g)"/>
+</svg>
